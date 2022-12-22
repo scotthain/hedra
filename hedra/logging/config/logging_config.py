@@ -12,7 +12,7 @@ from hedra.logging.spinner import ProgressText
 class LoggingConfig:
     logger_name: str=None
     logger_type: LoggerTypes=LoggerTypes.CONSOLE
-    logfiles_directory: str=f'{os.getcwd()}/logs'
+    logfiles_directory: str=None
     log_level: LogLevel=LogLevel.INFO
     logger_enabled: bool=None
     filesystem_rotation_interval_type: RolloverInterval=RolloverInterval.DAYS

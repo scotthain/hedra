@@ -1,4 +1,5 @@
 import asyncio
+import os
 from typing import List
 from aiologger.levels import LogLevel
 from .spinner import ProgressText
@@ -30,7 +31,7 @@ class LoggingManager:
 
         self.log_level = LogLevel.INFO
         self.log_level_name = 'info'
-        self.logfiles_directory = None
+        self.logfiles_directory = f'{os.getcwd()}/logs'
         self.progress_display = ProgressText()
 
     def update_log_level(self, log_level_name: str):

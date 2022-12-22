@@ -65,11 +65,11 @@ def check_graph(path: str, log_level: str):
     asyncio.set_event_loop(loop)
 
     pipeline = Graph(
-        list(discovered.values()),
+        graph_name=package,
+        stages=list(discovered.values()),
         cpus=1
     )
 
-    pipeline.validate()
     loop.run_until_complete(pipeline.check(path))
 
     logger['console'].sync.info('Validation complete!\n')
